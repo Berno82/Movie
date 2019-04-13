@@ -1,0 +1,22 @@
+{
+  "id": "be7b9818-be4b-4865-9259-6a3f0dd824da",
+  "name": "Movie",
+  "publisher": "Berno",
+  "brief": "",
+  "description": "",
+  "version": "1.0.0.0",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "capabilities": [],
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "11.0.0.0",
+  "application": "11.0.0.0",
+  "idRange": {
+    "from": 70100,
+    "to": 70119
+  }
+}
