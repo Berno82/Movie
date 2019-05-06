@@ -52,7 +52,7 @@ page 70101 "Movie List"
                    if movie.FindLast then
                     Number += movie."No."
                     else 
-                    number := 1;
+                    number := '1';
 
                    rec.Init;
                    rec."No." := number;  

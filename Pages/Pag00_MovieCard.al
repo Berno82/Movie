@@ -9,10 +9,38 @@ page 70100 "Movie Card"
         {
             group(General)
             {
-                field("No."; "No.")
+                field("No.";"No.")
                 {
                     
                 }
+                field(Title;Title)
+                {
+
+                }
+                field(Genre;Genre)
+                {
+
+                }
+            }
+            group(Type)
+            {
+                field(Media;Media)
+                {
+                    
+                }
+                field("Media Type";"Media Type")
+                {
+
+                }
+            }
+            group(Ratings)
+            {
+                field("Average Rating";"Average Rating")
+                {
+
+                }
+                field(Rating;Rating)
+                {}
             }
         }
     }
