@@ -10,10 +10,52 @@ table 70101 Friend
             DataClassification = ToBeClassified;
             trigger OnValidate();
             var
-                myInt: Integer;
-            begin
 
+            begin
+                PhoneNumberValidation("Phone No.");
             end;
+        }
+        field(2; Name; Text[50])
+        {
+            Caption = 'Name';
+            DataClassification = ToBeClassified;
+        }
+        field(3; Address; Text[50])
+        {
+            Caption = 'Address';
+            DataClassification = ToBeClassified;
+        }
+        field(4; Initals; Code[10])
+        {
+            Caption = 'Initials';
+            DataClassification = ToBeClassified;
+        }
+        field(5; Postcode; Code[10])
+        {
+            caption = 'Postcode';
+            DataClassification = ToBeClassified;
+            trigger OnValidate();
+            var
+            
+            begin
+                postcodetab.ValidatePostCode(City,Postcode,County,Country,false);
+            end;
+        }
+        field(6; City; Text[50])
+        {
+            Caption = 'City';
+            DataClassification = ToBeClassified;
+            trigger OnValidate();
+            var
+
+            begin
+                PostcodeTab.ValidateCity(City,Postcode,County,Country,false)
+            end;
+        }
+        field(7; Country; code[10])
+        {
+            Caption = 'Country';
+            DataClassification = ToBeClassified;
         }
 
     }
@@ -27,7 +69,9 @@ table 70101 Friend
     }
 
     var
-        myInt: Integer;
+        PostcodeTab : record "Post Code" ;
+        County : text[30];
+
 
     trigger OnInsert()
     begin
