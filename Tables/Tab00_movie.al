@@ -4,7 +4,7 @@ table 70100 Movie
 
     fields
     {
-        field(1; "No."; Code[10])
+        field(1; "No."; Integer)
         {
             Caption = 'No.';
             DataClassification = CustomerContent;
@@ -70,6 +70,8 @@ table 70100 Movie
         {
             Clustered = true;
         }
+        key(No2; Title,Genre)
+        {}
     }
 
     var

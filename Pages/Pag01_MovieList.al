@@ -47,12 +47,12 @@ page 70101 "Movie List"
                 trigger OnAction();
                 var
                   Movie : Record Movie;  
-                  Number : Code[10];
+                  Number : Integer;
                 begin
                    if movie.FindLast then
-                    Number += movie."No."
+                    Number += 1
                     else 
-                    number := '1';
+                    number := 1;
 
                    rec.Init;
                    rec."No." := number;  
