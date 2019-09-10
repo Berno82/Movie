@@ -1,9 +1,11 @@
-page 70102 "Friendslist"
+page 70102 "Friend list"
 {
     PageType = List;
     SourceTable = Friend;
-    caption = 'Friendslist';
+    CaptionML = ENU = 'Friends',
+                DAN = 'Venner';
     UsageCategory = Lists;
+    CardPageId = "Friend Card";
    
     layout
     {
@@ -29,7 +31,7 @@ page 70102 "Friendslist"
                 }
                 field(City;City)
                 {
-                    
+
                 }
             }
         }

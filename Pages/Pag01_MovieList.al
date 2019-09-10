@@ -2,7 +2,8 @@ page 70101 "Movie List"
 {
     PageType = List;
     SourceTable = Movie;
-    Caption = 'Movie List';
+    CaptionML = ENU = 'Movies',
+                DAN = 'Film';
     //Editable = false;
     UsageCategory = Lists;
     CardPageId = 70100;
