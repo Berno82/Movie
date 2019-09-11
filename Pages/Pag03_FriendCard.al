@@ -13,19 +13,16 @@ page 70103 "Friend Card"
                             DAN = 'Generelt';
                 field("Phone No.";"Phone No.")
                 {
-                    CaptionML = ENU = 'Phone No.',
-                                DAN = 'Telefon nr.';
+                    
                 }
                 field(Name; Name)
                 {
-                    Captionml = ENU = 'Name',
-                                DAN = 'Navn';
+                    
                 }
                 
                 field(Initals;Initals)
                 {
-CaptionML = ENU = 'Initials',
-            DAN = 'Initialer';
+
                 }
             }
             group(Addresses)
@@ -34,18 +31,39 @@ CaptionML = ENU = 'Initials',
                             DAN = 'Adresse';
                 field(Address;Address)
                 {
-                    CaptionML = ENU = 'Address',
-                                DAN = 'Adresse';
+                    
+                }
+                field(Postcode;Postcode)
+                {
+                    trigger OnValidate();
+                    begin
+                        Validate(Country,Country);
+                    end;
                 }
                 field(City;City)
                 {
-                    CaptionML = ENU = 'City',
-                                DAN = 'By';
+                   
                 }
                 field(Country;Country)
                 {
-                    CaptionML = ENU = 'Country',
-                                DAN = 'Land';
+                    trigger OnValidate();
+                    begin
+                        if Country <> 'DK' then begin
+                            IsVisible := true;
+                            
+                        end;
+                            
+                    end;
+
+                }
+                field(County;County)
+                    {
+                        TableRelation = "Post Code"."Country/Region Code";
+                        Visible = IsVisible;
+                    }
+                field(Look;IsVisible)
+                {
+
                 }
             }
         }
@@ -66,5 +84,5 @@ CaptionML = ENU = 'Initials',
     }
     
     var
-        myInt: Integer;
+        IsVisible: Boolean;
 }
