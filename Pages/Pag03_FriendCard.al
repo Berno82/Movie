@@ -48,11 +48,11 @@ page 70103 "Friend Card"
                 {
                     trigger OnValidate();
                     begin
-                        if Country <> 'DK' then begin
-                            IsVisible := true;
-                            
-                        end;
-                            
+                        if Country <> 'DK' then 
+                            IsVisible := true  
+                        else
+                            isvisible := false;                                
+                        CurrPage.Update(true);
                     end;
 
                 }
@@ -82,6 +82,11 @@ page 70103 "Friend Card"
             }
         }
     }
+    trigger OnOpenPage()
+        begin
+            isvisible := true;
+        end;
+        
     
     var
         IsVisible: Boolean;
